@@ -37,11 +37,7 @@ formulario.addEventListener('submit', function(e){
                         imagem.innerHTML = "<img src='"+ data.sprites.front_default +"'><img src='"+ data.sprites.back_default + "'>"
         })
         .catch(function(err) {
-                if(err == 'SyntaxError: Unexpected token N in JSON at position 0'){
-                        html = 'Pokémon não encontrado! );'
-                } else {
-                        html = 'Erro:' +err
-                }
+                err == 'SyntaxError: Unexpected token N in JSON at position 0' ? html = 'Pokémon não encontrado!' : html = `Erro ${err}`; 
                 resposta.innerHTML = html
         })
 
